@@ -1,0 +1,13 @@
+<h2>Welcome to Your Board</h2>
+
+<div ng-repeat="board in boards" class="col-md-3">
+  
+<a ui-sref="board.show({ id: board.id })">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h5>{{ board.title }}</h5>
+  </div>
+</div>
+</a>
+
+</div>
