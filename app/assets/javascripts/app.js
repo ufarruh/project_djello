@@ -26,7 +26,7 @@ App.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider,
       views: {
         '@' : {
           templateUrl: 'templates/show.html',
-          controller: 'BoardsCtrl's
+          controller: 'BoardsCtrl'
         }
       }
     })
