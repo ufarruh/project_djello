@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
 
 
   def index
-    @boards = Board.all
+    @boards = current_user.boards
 
     respond_to do |format|
       format.json { render json: @boards }
@@ -10,7 +10,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
 
     respond_to do |format|
       format.json { render json: @board }
@@ -18,7 +18,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.new(board_params)
 
     if @board.save
       respond_to do |format|
@@ -28,7 +28,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board = Board.find(params[:id]).destroy
+    @board = current_user.boards.find(params[:id]).destroy
      head :no_content
   end
 

@@ -1,4 +1,4 @@
-var App = angular.module("App", ['ui.router', 'restangular', 'ui.bootstrap']);
+var App = angular.module("App", ['ui.router', 'restangular', 'ui.bootstrap', 'Devise']);
 
 
 App.config(['RestangularProvider', function(RestangularProvider){
@@ -9,10 +9,9 @@ App.config(['RestangularProvider', function(RestangularProvider){
 
 }]);
 
-
 App.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
 
-  $urlRouterProvider.otherwise('/board');
+  //$urlRouterProvider.otherwise('/board');
 
   $stateProvider
     .state('board', {
@@ -31,3 +30,14 @@ App.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider,
       }
     })
 }]);
+
+App.config(
+  ["$httpProvider",
+  function($httpProvider) {
+    var token = $('meta[name=csrf-token]')
+      .attr('content');
+    $httpProvider
+      .defaults
+      .headers
+      .common['X-CSRF-Token'] = token;
+  }]);

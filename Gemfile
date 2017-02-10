@@ -20,6 +20,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 gem 'devise'
 gem 'rails_12factor', group: :production
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
 
 
 group :development, :test do
