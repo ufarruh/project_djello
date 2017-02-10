@@ -1,5 +1,5 @@
-App.controller('BoardsCtrl', ['$scope', 'Restangular', '$stateParams', 'Auth',
-                              function($scope, Restangular, $stateParams, Auth){
+App.controller('BoardsCtrl', ['$scope', 'Restangular', '$stateParams', 'Auth', '$location',
+                              function($scope, Restangular, $stateParams, Auth, $location){
 
 
   $scope.boardForm = {};
@@ -23,12 +23,14 @@ App.controller('BoardsCtrl', ['$scope', 'Restangular', '$stateParams', 'Auth',
       console.log(response);
       $scope.boardForm = {};
       $scope.boards.push(response);
+      dialog.close(response);
     });
   };
 
 
   $scope.deleteBoard = function(board){
     Restangular.one('boards', board.id).remove();
+    $location.path('/board');
   };
 
 }]);
