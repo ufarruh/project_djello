@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require angular
+//= require ui-bootstrap-0.1.0.js
 //= require underscore.js
 //= require angular-ui-router.js
 //= require restangular.js

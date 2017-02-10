@@ -1,0 +1,48 @@
+<h2>Welcome to Your Board</h2>
+
+
+<div ng-repeat="board in boards" class="col-md-3">
+
+<a ui-sref="board.show({ id: board.id })">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h5>{{ board.title }}</h5>
+  </div>
+</div>
+</a>
+
+</div>
+
+<br><br>
+
+
+<br><br>
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">New Board</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New Board</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name" ng-model="boardForm.title">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="create()">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>

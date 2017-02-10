@@ -1,4 +1,4 @@
-var App = angular.module("App", ['ui.router', 'restangular']);
+var App = angular.module("App", ['ui.router', 'restangular', 'ui.bootstrap']);
 
 
 App.config(['RestangularProvider', function(RestangularProvider){
@@ -12,12 +12,12 @@ App.config(['RestangularProvider', function(RestangularProvider){
 
 App.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
 
-  // $urlRouterProvider.otherwise('/board');
+  $urlRouterProvider.otherwise('/board');
 
   $stateProvider
     .state('board', {
       url: '/board',
-      templateUrl: 'templates/board.html',
+      templateUrl: 'templates/boards.html',
       controller: 'BoardsCtrl'
     })
 
