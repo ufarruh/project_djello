@@ -32,6 +32,10 @@ App.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider,
         'listForm@boards.show' : {
           templateUrl: 'templates/_listForm.html',
           controller: 'ListsCtrl'
+        },
+        'card@boards.show' : {
+          templateUrl: 'templates/_card.html',
+          controller: 'CardCtrl'
         }
       }
     })

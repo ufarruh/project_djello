@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'cards/index'
+
   get 'lists/create'
 
   get 'boards/index'
@@ -11,6 +13,8 @@ Rails.application.routes.draw do
       resources :boards do
         resources :lists, only: [:create, :index, :destroy]
       end
+
+      resources :cards, only: [:index, :create]
     end
   end
 

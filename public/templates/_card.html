@@ -1,0 +1,6 @@
+<div ng-repeat="card in cards">
+  {{ card.description }}
+</div>
+
+<input type="text" placeholder="Card Name" ng-model="cardForm.description"><br />
+<button type="button" name="button" class="btn btn-success btn-sm" ng-click="createCard()">Save</button>

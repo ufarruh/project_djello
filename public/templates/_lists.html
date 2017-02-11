@@ -4,7 +4,7 @@
       {{ list.title }} <a ui-sref="boards.show({id: boardId})"><i class="glyphicon glyphicon-remove pull-right" ng-click="deleteList(list)" aria-hidden="true"></i></a>
     </div>
     <div class="panel-body">
-      {{ list.created_at | date }}
+      <div ui-view="card"></div>
     </div>
   </div>
 </div>

@@ -23,6 +23,7 @@ class ListsController < ApplicationController
         format.json { render json: { error: "List create failed." }, status: "unprocessable_entity" }
       end
     end
+    
   end
 
   def destroy
