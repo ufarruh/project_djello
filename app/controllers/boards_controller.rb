@@ -13,7 +13,7 @@ class BoardsController < ApplicationController
     @board = current_user.boards.find(params[:id])
 
     respond_to do |format|
-      format.json { render json: @board }
+      format.json { render json: @board.to_json( include: :lists) }
     end
   end
 

@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
+gem 'pry-rails', group: [:development, :test]
 gem 'angularjs-rails'
 gem 'angular_rails_csrf'
 gem 'bootstrap-sass', '~> 3.3.6'

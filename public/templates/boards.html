@@ -3,7 +3,7 @@
 
 <div ng-repeat="board in boards" class="col-md-3">
 
-<a ui-sref="board.show({ id: board.id })">
+<a ui-sref="boards.show({ id: board.id })">
 <div class="panel panel-default">
   <div class="panel-body">
     <h5>{{ board.title }}</h5>
@@ -41,7 +41,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="create()">Create</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="create()">Create</button>
       </div>
     </div>
   </div>

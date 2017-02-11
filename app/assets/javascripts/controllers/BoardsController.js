@@ -6,6 +6,7 @@ App.controller('BoardsCtrl', ['$scope', 'Restangular', '$stateParams', 'Auth', '
   $scope.board = Restangular.one('boards', $stateParams.id).get().$object;
   $scope.boards = Restangular.all('boards').getList().$object;
 
+  $scope.listForm = {};
 
   Auth.currentUser()
     .then(function(user){
@@ -23,14 +24,16 @@ App.controller('BoardsCtrl', ['$scope', 'Restangular', '$stateParams', 'Auth', '
       console.log(response);
       $scope.boardForm = {};
       $scope.boards.push(response);
-      dialog.close(response);
     });
   };
 
 
+
+
   $scope.deleteBoard = function(board){
     Restangular.one('boards', board.id).remove();
-    $location.path('/board');
+    console.log($scope.boards);
+    $location.path('/boards');
   };
 
 }]);

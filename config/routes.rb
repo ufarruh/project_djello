@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'lists/create'
+
   get 'boards/index'
 
   devise_for :users
@@ -6,7 +8,9 @@ Rails.application.routes.draw do
 
   scope :api do
     scope :v1 do
-      resources :boards
+      resources :boards do
+        resources :lists, only: [:create, :index, :destroy]
+      end
     end
   end
 

@@ -11,21 +11,27 @@ App.config(['RestangularProvider', function(RestangularProvider){
 
 App.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
 
-  //$urlRouterProvider.otherwise('/board');
-
   $stateProvider
-    .state('board', {
-      url: '/board',
+    .state('boards', {
+      url: '/boards',
       templateUrl: 'templates/boards.html',
       controller: 'BoardsCtrl'
     })
 
-    .state('board.show', {
+    .state('boards.show', {
       url: '/:id',
       views: {
         '@' : {
           templateUrl: 'templates/show.html',
           controller: 'BoardsCtrl'
+        },
+        'lists@boards.show' : {
+          templateUrl: 'templates/_lists.html',
+          controller: 'ListsCtrl'
+        },
+        'listForm@boards.show' : {
+          templateUrl: 'templates/_listForm.html',
+          controller: 'ListsCtrl'
         }
       }
     })

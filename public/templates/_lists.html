@@ -1,0 +1,10 @@
+<div ng-repeat="list in lists" class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ list.title }} <a ui-sref="boards.show({id: boardId})"><i class="glyphicon glyphicon-remove pull-right" ng-click="deleteList(list)" aria-hidden="true"></i></a>
+    </div>
+    <div class="panel-body">
+      {{ list.created_at | date }}
+    </div>
+  </div>
+</div>
